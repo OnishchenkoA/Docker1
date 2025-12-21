@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
-RUN apt update && apt install -y g++
-WORKDIR  /app
+RUN apt update && apt install -y clang
+WORKDIR /app
 COPY . .
-RUN g++ main.cpp -o macros
+RUN clang++ main.cpp -o macros
 CMD ["./macros"]
